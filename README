@@ -1,5 +1,5 @@
 LOCAL-APP
-APP para mobile - fica em segundo plano/terceciro plano - gravando a seu percurso - se foi de carro/a pé e o tempo que estava em cada local.
+APP para mobile - fica em segundo plano - gravando a seu percurso - se foi de carro/a pé e o tempo que estava em cada local(sumario).
 Liga automatico quando reiniciar o telemovel ou liga.Um app que salva sua localização ao longo do dia e mostra:
 
 
@@ -8,12 +8,10 @@ Onde você passa mais tempo
 Quanto tempo ficou em cada lugar
 
 Mapa com heatmap
-🎯 Diferencial
+
 Tudo salvo localmente
 Nenhum dado vai pra servidor
 Dashboard simples com gráfico
 
 
-Ideia:
-Para quem vai de viagem e quer gravar os lugares.
 
