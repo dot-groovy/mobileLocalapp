@@ -5,6 +5,10 @@ import type {
   Trip,
   DailySummary,
   TransportMode,
+<<<<<<< HEAD
+=======
+  ActivitySegment,
+>>>>>>> adf99c4 (atualização)
 } from '@/src/types';
 
 // ── Location Points ──
@@ -24,9 +28,17 @@ export async function insertLocationPoints(
   db: SQLiteDatabase,
   points: Omit<LocationPoint, 'id'>[]
 ): Promise<void> {
+<<<<<<< HEAD
   for (const point of points) {
     await insertLocationPoint(db, point);
   }
+=======
+  await db.withTransactionAsync(async () => {
+    for (const point of points) {
+      await insertLocationPoint(db, point);
+    }
+  });
+>>>>>>> adf99c4 (atualização)
 }
 
 export async function getLocationPoints(
@@ -50,6 +62,16 @@ export async function getRecentLocationPoints(
   );
 }
 
+<<<<<<< HEAD
+=======
+export async function getLatestLocationPoint(db: SQLiteDatabase): Promise<LocationPoint | null> {
+  const result = await db.getFirstAsync<LocationPoint>(
+    `SELECT * FROM location_points ORDER BY timestamp DESC LIMIT 1`
+  );
+  return result ?? null;
+}
+
+>>>>>>> adf99c4 (atualização)
 export async function deleteLocationPointsBefore(
   db: SQLiteDatabase,
   timestamp: number
@@ -114,7 +136,11 @@ export async function getTopVisitedPlaces(
        COUNT(*) as visit_count
      FROM visits
      WHERE arrival_at >= ? AND arrival_at <= ? AND departure_at IS NOT NULL
+<<<<<<< HEAD
      GROUP BY COALESCE(address, ROUND(lat, 3) || ',' || ROUND(lng, 3))
+=======
+     GROUP BY COALESCE(address, ROUND(lat, 4) || ', ' || ROUND(lng, 4))
+>>>>>>> adf99c4 (atualização)
      ORDER BY total_minutes DESC
      LIMIT ?`,
     [startTime, endTime, limit]
@@ -146,6 +172,106 @@ export async function getTrips(
   );
 }
 
+<<<<<<< HEAD
+=======
+// ── Derived activity segments ──
+
+export async function replaceActivitySegments(
+  db: SQLiteDatabase,
+  startTime: number,
+  endTime: number,
+  segments: ActivitySegment[]
+): Promise<void> {
+  await db.withTransactionAsync(async () => {
+    await db.runAsync(
+      `DELETE FROM activity_segments WHERE NOT (end_at < ? OR start_at > ?)`,
+      [startTime, endTime]
+    );
+    for (const segment of segments) {
+      await db.runAsync(
+        `INSERT INTO activity_segments
+          (mode, start_at, end_at, start_lat, start_lng, end_lat, end_lng, distance_km, confidence)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [
+          segment.mode,
+          segment.start_at,
+          segment.end_at,
+          segment.start_lat,
+          segment.start_lng,
+          segment.end_lat,
+          segment.end_lng,
+          segment.distance_km,
+          segment.confidence,
+        ]
+      );
+    }
+  });
+}
+
+export async function getActivitySegments(
+  db: SQLiteDatabase,
+  startTime: number,
+  endTime: number
+): Promise<ActivitySegment[]> {
+  return db.getAllAsync<ActivitySegment>(
+    `SELECT * FROM activity_segments
+     WHERE NOT (end_at < ? OR start_at > ?)
+     ORDER BY start_at ASC`,
+    [startTime, endTime]
+  );
+}
+
+export async function replaceDerivedTimeline(
+  db: SQLiteDatabase,
+  startTime: number,
+  endTime: number,
+  visits: Omit<Visit, 'id'>[],
+  trips: Omit<Trip, 'id'>[]
+): Promise<void> {
+  await db.withTransactionAsync(async () => {
+    await db.runAsync(
+      `DELETE FROM visits WHERE arrival_at >= ? AND arrival_at <= ?`,
+      [startTime, endTime]
+    );
+    await db.runAsync(
+      `DELETE FROM trips WHERE start_at >= ? AND start_at <= ?`,
+      [startTime, endTime]
+    );
+    for (const visit of visits) {
+      await db.runAsync(
+        `INSERT INTO visits (lat, lng, address, arrival_at, departure_at, duration_minutes)
+         VALUES (?, ?, ?, ?, ?, ?)`,
+        [
+          visit.lat,
+          visit.lng,
+          visit.address,
+          visit.arrival_at,
+          visit.departure_at,
+          visit.duration_minutes,
+        ]
+      );
+    }
+    for (const trip of trips) {
+      await db.runAsync(
+        `INSERT INTO trips
+          (start_lat, start_lng, end_lat, end_lng, start_at, end_at, transport_mode, distance_km)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+        [
+          trip.start_lat,
+          trip.start_lng,
+          trip.end_lat,
+          trip.end_lng,
+          trip.start_at,
+          trip.end_at,
+          trip.transport_mode,
+          trip.distance_km,
+        ]
+      );
+    }
+  });
+}
+
+>>>>>>> adf99c4 (atualização)
 // ── Daily Summary ──
 
 export async function upsertDailySummary(
@@ -193,6 +319,10 @@ export async function deleteAllData(db: SQLiteDatabase): Promise<void> {
   await db.execAsync(`DELETE FROM location_points`);
   await db.execAsync(`DELETE FROM visits`);
   await db.execAsync(`DELETE FROM trips`);
+<<<<<<< HEAD
+=======
+  await db.execAsync(`DELETE FROM activity_segments`);
+>>>>>>> adf99c4 (atualização)
   await db.execAsync(`DELETE FROM daily_summary`);
 }
 
@@ -203,6 +333,10 @@ export async function deleteDataBefore(
   await db.runAsync(`DELETE FROM location_points WHERE timestamp < ?`, [timestamp]);
   await db.runAsync(`DELETE FROM visits WHERE arrival_at < ?`, [timestamp]);
   await db.runAsync(`DELETE FROM trips WHERE start_at < ?`, [timestamp]);
+<<<<<<< HEAD
+=======
+  await db.runAsync(`DELETE FROM activity_segments WHERE end_at < ?`, [timestamp]);
+>>>>>>> adf99c4 (atualização)
   const dateStr = new Date(timestamp).toISOString().split('T')[0];
   await db.runAsync(`DELETE FROM daily_summary WHERE date < ?`, [dateStr]);
 }

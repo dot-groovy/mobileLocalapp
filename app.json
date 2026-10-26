@@ -39,12 +39,16 @@
         "ACCESS_BACKGROUND_LOCATION",
         "FOREGROUND_SERVICE",
         "FOREGROUND_SERVICE_LOCATION",
+<<<<<<< HEAD
         "RECEIVE_BOOT_COMPLETED",
         "android.permission.ACCESS_COARSE_LOCATION",
         "android.permission.ACCESS_FINE_LOCATION",
         "android.permission.ACCESS_BACKGROUND_LOCATION",
         "android.permission.FOREGROUND_SERVICE",
         "android.permission.FOREGROUND_SERVICE_LOCATION"
+=======
+        "RECEIVE_BOOT_COMPLETED"
+>>>>>>> adf99c4 (atualização)
       ]
     },
     "web": {
@@ -69,7 +73,13 @@
         {
           "enableFTS": true
         }
+<<<<<<< HEAD
       ]
+=======
+      ],
+      "expo-font",
+      "expo-web-browser"
+>>>>>>> adf99c4 (atualização)
     ],
     "experiments": {
       "typedRoutes": true

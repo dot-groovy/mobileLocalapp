@@ -2,6 +2,11 @@ import type { SQLiteDatabase } from 'expo-sqlite';
 
 export async function initializeDatabase(db: SQLiteDatabase): Promise<void> {
   await db.execAsync(`PRAGMA journal_mode = WAL;`);
+<<<<<<< HEAD
+=======
+  const versionRow = await db.getFirstAsync<{ user_version: number }>(`PRAGMA user_version;`);
+  const databaseVersion = versionRow?.user_version ?? 0;
+>>>>>>> adf99c4 (atualização)
 
   await db.execAsync(`
     CREATE TABLE IF NOT EXISTS location_points (
@@ -55,6 +60,24 @@ export async function initializeDatabase(db: SQLiteDatabase): Promise<void> {
   `);
 
   await db.execAsync(`
+<<<<<<< HEAD
+=======
+    CREATE TABLE IF NOT EXISTS activity_segments (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      mode TEXT NOT NULL,
+      start_at INTEGER NOT NULL,
+      end_at INTEGER NOT NULL,
+      start_lat REAL NOT NULL,
+      start_lng REAL NOT NULL,
+      end_lat REAL NOT NULL,
+      end_lng REAL NOT NULL,
+      distance_km REAL NOT NULL DEFAULT 0,
+      confidence REAL NOT NULL DEFAULT 0
+    );
+  `);
+
+  await db.execAsync(`
+>>>>>>> adf99c4 (atualização)
     CREATE INDEX IF NOT EXISTS idx_location_points_timestamp ON location_points(timestamp);
   `);
   await db.execAsync(`
@@ -66,4 +89,22 @@ export async function initializeDatabase(db: SQLiteDatabase): Promise<void> {
   await db.execAsync(`
     CREATE INDEX IF NOT EXISTS idx_daily_summary_date ON daily_summary(date);
   `);
+<<<<<<< HEAD
+=======
+  await db.execAsync(`
+    CREATE INDEX IF NOT EXISTS idx_activity_segments_time ON activity_segments(start_at, end_at);
+  `);
+
+  if (databaseVersion < 2) {
+    // Visits, trips and summaries are derived data. Remove results generated
+    // by the previous point-by-point algorithm while preserving raw GPS data.
+    await db.execAsync(`
+      DELETE FROM visits;
+      DELETE FROM trips;
+      DELETE FROM activity_segments;
+      DELETE FROM daily_summary;
+      PRAGMA user_version = 2;
+    `);
+  }
+>>>>>>> adf99c4 (atualização)
 }

@@ -12,6 +12,7 @@ export const AppColors = {
   warning: '#F59E0B',
   error: '#EF4444',
 
+<<<<<<< HEAD
   gray50: '#F9FAFB',
   gray100: '#F3F4F6',
   gray200: '#E5E7EB',
@@ -22,6 +23,27 @@ export const AppColors = {
   gray700: '#374151',
   gray800: '#1F2937',
   gray900: '#111827',
+=======
+  gray50: '#F8FAFC',
+  gray100: '#F1F5F9',
+  gray200: '#E2E8F0',
+  gray300: '#CBD5E1',
+  gray400: '#94A3B8',
+  gray500: '#64748B',
+  gray600: '#475569',
+  gray700: '#334155',
+  gray800: '#1E293B',
+  gray900: '#0F172A',
+};
+
+export const spacing = {
+  xs: 4,
+  sm: 8,
+  md: 12,
+  lg: 16,
+  xl: 24,
+  xxl: 32,
+>>>>>>> adf99c4 (atualização)
 };
 
 const tintColorLight = AppColors.primary;
@@ -41,6 +63,7 @@ export default {
     cardBorder: AppColors.gray100,
   },
   dark: {
+<<<<<<< HEAD
     text: AppColors.gray50,
     textSecondary: AppColors.gray400,
     background: AppColors.gray900,
@@ -51,5 +74,17 @@ export default {
     tabIconSelected: tintColorDark,
     card: AppColors.gray800,
     cardBorder: AppColors.gray700,
+=======
+    text: '#F1F5F9',
+    textSecondary: '#94A3B8',
+    background: '#030712',
+    surface: '#0F172A',
+    border: '#1E293B',
+    tint: tintColorDark,
+    tabIconDefault: '#475569',
+    tabIconSelected: tintColorDark,
+    card: '#0F172A',
+    cardBorder: '#1E293B',
+>>>>>>> adf99c4 (atualização)
   },
 };

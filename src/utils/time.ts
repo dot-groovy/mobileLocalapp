@@ -23,7 +23,14 @@ export function formatDate(timestamp: number): string {
 
 export function getDateString(timestamp?: number): string {
   const date = timestamp ? new Date(timestamp) : new Date();
+<<<<<<< HEAD
   return date.toISOString().split('T')[0];
+=======
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+>>>>>>> adf99c4 (atualização)
 }
 
 export function getDayStart(dateString: string): number {
@@ -39,7 +46,13 @@ export function isToday(dateString: string): boolean {
 }
 
 export function addDays(dateString: string, days: number): string {
+<<<<<<< HEAD
   const date = new Date(dateString);
   date.setDate(date.getDate() + days);
   return date.toISOString().split('T')[0];
+=======
+  const date = new Date(dateString + 'T12:00:00');
+  date.setDate(date.getDate() + days);
+  return getDateString(date.getTime());
+>>>>>>> adf99c4 (atualização)
 }

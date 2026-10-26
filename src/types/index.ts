@@ -11,6 +11,22 @@ export interface LocationPoint {
   timestamp: number;
 }
 
+<<<<<<< HEAD
+=======
+export interface ActivitySegment {
+  id?: number;
+  mode: TransportMode;
+  start_at: number;
+  end_at: number;
+  start_lat: number;
+  start_lng: number;
+  end_lat: number;
+  end_lng: number;
+  distance_km: number;
+  confidence: number;
+}
+
+>>>>>>> adf99c4 (atualização)
 export interface Visit {
   id: number;
   lat: number;
@@ -54,3 +70,13 @@ export interface TimelineEvent {
   data: Visit | Trip;
   timestamp: number;
 }
+<<<<<<< HEAD
+=======
+
+export interface RouteSelection {
+  type: 'trip' | 'visit';
+  trip?: Trip;
+  visit?: Visit;
+  dateString: string;
+}
+>>>>>>> adf99c4 (atualização)

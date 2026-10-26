@@ -6,11 +6,17 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
+<<<<<<< HEAD
     "web": "expo start --web"
+=======
+    "web": "expo start --web",
+    "test:activity": "tsx tests/activityProcessing.test.ts"
+>>>>>>> adf99c4 (atualização)
   },
   "dependencies": {
     "@expo/ngrok": "^4.1.0",
     "@expo/vector-icons": "^15.0.3",
+<<<<<<< HEAD
     "@react-native-async-storage/async-storage": "2.1.2",
     "@react-navigation/native": "^7.1.8",
     "expo": "~54.0.33",
@@ -19,11 +25,27 @@
     "expo-linking": "~8.0.11",
     "expo-location": "~19.0.8",
     "expo-router": "~6.0.23",
+=======
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-navigation/native": "^7.1.8",
+    "expo": "~54.0.37",
+    "expo-constants": "~18.0.14",
+    "expo-dev-client": "~6.0.21",
+    "expo-font": "~14.0.12",
+    "expo-haptics": "~15.0.8",
+    "expo-linking": "~8.0.12",
+    "expo-location": "~19.0.8",
+    "expo-router": "~6.0.24",
+>>>>>>> adf99c4 (atualização)
     "expo-splash-screen": "~31.0.13",
     "expo-sqlite": "~16.0.10",
     "expo-status-bar": "~3.0.9",
     "expo-task-manager": "~14.0.9",
+<<<<<<< HEAD
     "expo-web-browser": "~15.0.10",
+=======
+    "expo-web-browser": "~15.0.11",
+>>>>>>> adf99c4 (atualização)
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-native": "0.81.5",
@@ -34,10 +56,18 @@
     "react-native-screens": "~4.16.0",
     "react-native-svg": "15.12.1",
     "react-native-web": "~0.21.0",
+<<<<<<< HEAD
+=======
+    "react-native-webview": "13.15.0",
+>>>>>>> adf99c4 (atualização)
     "react-native-worklets": "0.5.1"
   },
   "devDependencies": {
     "@types/react": "~19.1.0",
+<<<<<<< HEAD
+=======
+    "tsx": "^4.23.15",
+>>>>>>> adf99c4 (atualização)
     "typescript": "~5.9.2"
   },
   "private": true
