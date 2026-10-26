@@ -2,4 +2,4 @@ Mobile application that tracks your day in the background: GPS routes, visit dur
 Data is stored locally on the device using SQLite. Includes a timeline detailing your routes, a map displaying routes, daily summaries, and dashboard charts. 
 Resumes tracking after the device restarts through background location tasks.
 
-<img src="./prints26/Image1.jpeg" alt="Captura de ecrã do projeto" width="400">
+<img src="./prints26/Image1.jpeg" alt="Captura de ecrã do projeto" width="300">
