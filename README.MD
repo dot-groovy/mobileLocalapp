@@ -6,6 +6,8 @@ Resumes tracking after the device restarts through background location tasks.
   <tr>
     <td><img src="./prints26/Image1.jpeg" alt="Captura 1" width="300"/></td>
     <td><img src="./prints26/Image2.jpeg" alt="Captura 2" width="300"/></td>
+  </tr>
+  <tr>
     <td><img src="./prints26/Image3.jpeg" alt="Captura 3" width="300"/></td>
     <td><img src="./prints26/Image4.jpeg" alt="Captura 4" width="300"/></td>
   </tr>
