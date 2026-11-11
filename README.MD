@@ -1,9 +1,9 @@
 LocalApp is a mobile app that automatically records where you go during the day, with no manual input.
 
--Background tracking: records GPS routes even when the app is closed, and resumes after a device restart.
--Visit and movement detection: identifies places where the user stayed, how long they stayed, and whether they moved on foot or by transport.
--Local-first storage: all data stays on the phone in SQLite, which protects privacy and lets the app work offline.
--Visualization: a timeline of the day, a map with the routes, daily summaries and dashboard charts.
+**Background tracking:** Records GPS routes even when the app is closed, and resumes after a device restart.  
+**Visit and movement detection:** Identifies places where the user stayed, how long they stayed, and whether they moved on foot or by transport.  
+**Local-first storage:** All data stays on the phone in SQLite, which protects privacy and lets the app work offline.  
+**Visualization:** A timeline of the day, a map with the routes, daily summaries and dashboard charts.
 
 <table>
   <tr>
