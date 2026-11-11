@@ -1,6 +1,9 @@
-Mobile application that tracks your day in the background: GPS routes, visit duration, and detection of travel on foot or by transport.
-Data is stored locally on the device using SQLite. Includes a timeline detailing your routes, a map displaying routes, daily summaries, and dashboard charts. 
-Resumes tracking after the device restarts through background location tasks.
+LocalApp is a mobile app that automatically records where you go during the day, with no manual input.
+
+-Background tracking: records GPS routes even when the app is closed, and resumes after a device restart.
+-Visit and movement detection: identifies places where the user stayed, how long they stayed, and whether they moved on foot or by transport.
+-Local-first storage: all data stays on the phone in SQLite, which protects privacy and lets the app work offline.
+-Visualization: a timeline of the day, a map with the routes, daily summaries and dashboard charts.
 
 <table>
   <tr>
