@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/** Dashboard: resumo do dia, gráficos e lugares onde mais tempo (dados via hooks + SQLite). */
+>>>>>>> 9a30b6e (README, comentários e documentação)
 import React, { useState, useCallback } from 'react';
 import { StyleSheet, ScrollView, RefreshControl } from 'react-native';
 import { useColorScheme } from '@/components/useColorScheme';

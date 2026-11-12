@@ -1,3 +1,4 @@
+/** Nome da task de GPS, limiares de velocidade e opções por defeito — ajusta aqui o comportamento. */
 export const LOCATION_TASK_NAME = 'LOCALAPP_BACKGROUND_LOCATION';
 
 export const SPEED_THRESHOLDS = {

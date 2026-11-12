@@ -1,0 +1,49 @@
+LOCAL-APP
+=========
+
+App mobile (Expo) que grava o percurso em segundo plano: onde passas tempo, deslocações a pé/carro e resumo do dia. Tudo em SQLite no telemóvel — sem servidor.
+
+Como iniciar o projeto
+----------------------
+
+Requisitos: Node.js (LTS), npm. Para GPS real: telemóvel Android/iOS ou emulador (não funciona em web).
+
+1. Instalar dependências (só na primeira vez):
+
+   npm install
+
+2. Arrancar o Metro / Expo:
+
+   npm start
+
+3. Abrir a app:
+   - Android: npm run android   (ou ler o QR no Expo Go)
+   - iOS (Mac): npm run ios
+   - Web (só UI / dados mock): npm run web
+
+No telemóvel, em Definições liga o rastreamento e aceita permissão de localização “sempre” / em segundo plano.
+
+Como o código está organizado (para explicar a alguém)
+-------------------------------------------------------
+
+1. app/_layout.tsx          → Arranque: fontes, SQLite (DatabaseProvider), navegação
+2. app/(tabs)/*             → Ecrãs: Dashboard, Mapa, Timeline, Definições
+3. useTrackingStatus        → Liga/desliga tracking; grava preferências (AsyncStorage)
+4. locationTracking.ts      → Task em background: recebe GPS, grava pontos, corre deteção
+5. schema.ts + queries.ts   → Tabelas e leitura/escrita SQLite
+6. visitDetection.ts        → “Paragens” = visitas (ficas parado num sítio)
+7. transportDetection.ts    → Velocidade → parado / a pé / carro
+8. dailySummary.ts          → Totais do dia para o Dashboard
+
+Pastas úteis:
+- app/           rotas (expo-router)
+- src/services/  lógica de negócio
+- src/hooks/     dados para os ecrãs
+- src/database/  SQLite
+
+Ideia do produto
+----------------
+
+- Onde passas mais tempo e quanto tempo em cada lugar
+- Mapa com percurso
+- Dados só locais — útil em viagens

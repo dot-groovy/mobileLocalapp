@@ -1,3 +1,4 @@
+/** Agrega o dia (distância, minutos a pé/carro/parado, n.º de lugares) para o Dashboard. */
 import type { SQLiteDatabase } from 'expo-sqlite';
 <<<<<<< HEAD
 import { getLocationPoints, getVisits, getTrips, upsertDailySummary } from '@/src/database/queries';

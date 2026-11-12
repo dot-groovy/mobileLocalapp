@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/** Mapa: percurso do dia e marcadores de visitas (react-native-maps no telemóvel). */
+>>>>>>> 9a30b6e (README, comentários e documentação)
 import React, { useState } from 'react';
 import { StyleSheet, View, Platform } from 'react-native';
 import { useColorScheme } from '@/components/useColorScheme';

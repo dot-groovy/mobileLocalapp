@@ -1,3 +1,4 @@
+/** Ecrã Definições: lê/grava opções e chama start/stop do locationTracking. */
 import { useState, useEffect, useCallback } from 'react';
 import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';

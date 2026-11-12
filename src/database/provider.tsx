@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/** Abre localapp.db, cria tabelas e expõe `useDatabase()` ao resto da app. */
+>>>>>>> 9a30b6e (README, comentários e documentação)
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import type { SQLiteDatabase } from 'expo-sqlite';
 =======

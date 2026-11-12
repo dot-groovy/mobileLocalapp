@@ -1,3 +1,4 @@
+/** Onde o utilizador liga o GPS, escolhe precisão, exporta ou apaga dados locais. */
 import React, { useState, useCallback } from 'react';
 import {
   StyleSheet,

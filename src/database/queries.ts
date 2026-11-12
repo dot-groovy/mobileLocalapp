@@ -1,3 +1,4 @@
+/** Funções SQL usadas pelos serviços e pelos ecrãs (inserir pontos, listar visitas, exportar, etc.). */
 import type { SQLiteDatabase } from 'expo-sqlite';
 import type {
   LocationPoint,

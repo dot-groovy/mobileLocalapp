@@ -1,3 +1,4 @@
+/** Classifica cada ponto: parado / a pé / carro, com base na velocidade (m/s do GPS). */
 import type { TransportMode } from '@/src/types';
 import { SPEED_THRESHOLDS } from '@/src/utils/constants';
 import { metersPerSecToKmh, smoothSpeeds } from '@/src/utils/geo';

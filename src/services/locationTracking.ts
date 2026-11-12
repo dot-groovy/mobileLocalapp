@@ -1,3 +1,7 @@
+/**
+ * Coração do rastreamento (só mobile).
+ * Fluxo: permissões → startLocationUpdatesAsync → task guarda pontos → visitDetection → dailySummary.
+ */
 import * as Location from 'expo-location';
 import * as TaskManager from 'expo-task-manager';
 import { Platform } from 'react-native';

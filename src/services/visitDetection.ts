@@ -1,3 +1,4 @@
+/** Converte pontos GPS parados em registos `visits` (chegada, saída, duração). */
 import type { SQLiteDatabase } from 'expo-sqlite';
 import type { LocationPoint } from '@/src/types';
 import { VISIT_DETECTION } from '@/src/utils/constants';

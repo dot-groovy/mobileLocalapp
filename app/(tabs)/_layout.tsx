@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/** Menu inferior: Dashboard, Mapa, Timeline e Definições (onde se liga o GPS). */
+>>>>>>> 9a30b6e (README, comentários e documentação)
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';

@@ -1,3 +1,4 @@
+/** Tipos partilhados entre base de dados, serviços e UI. */
 export type TransportMode = 'stationary' | 'walking' | 'driving' | 'unknown';
 
 export interface LocationPoint {

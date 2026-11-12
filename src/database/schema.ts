@@ -1,3 +1,7 @@
+/**
+ * Modelo de dados local (SQLite).
+ * location_points = cada GPS; visits = paragens; trips = deslocações; daily_summary = totais do dia.
+ */
 import type { SQLiteDatabase } from 'expo-sqlite';
 
 export async function initializeDatabase(db: SQLiteDatabase): Promise<void> {

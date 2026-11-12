@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/** Lista cronológica de visitas e viagens do dia selecionado. */
+>>>>>>> 9a30b6e (README, comentários e documentação)
 import React, { useState, useMemo, useCallback } from 'react';
 import { StyleSheet, ScrollView, View, RefreshControl } from 'react-native';
 =======
