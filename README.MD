@@ -5,7 +5,7 @@ LocalApp is a mobile app that automatically records where you go during the day,
 **Local-first storage:** All data stays on the phone in SQLite, which protects privacy and lets the app work offline.  
 **Visualization:** A timeline of the day, a map with the routes, daily summaries and dashboard charts.
 
-more detail: https://dot-groovy.github.io/portfolio/project/002/
+detail:https://dot-groovy.github.io/portfolio/project/002/
 
 <table>
   <tr>
