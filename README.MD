@@ -1,4 +1,4 @@
-LocalApp is a mobile app that automatically records where you go during the day, with no manual input.
+LocalApp is a cross-platform mobile app that automatically records where you go during the day, with no manual input.
 
 **Background tracking:** Records GPS routes even when the app is closed, resumes tracking after a device restart, and provides a detailed summary of each route.  
 **Visit and movement detection:** Identifies places where the user stayed, how long they stayed, and whether they moved on foot or by transport.  
